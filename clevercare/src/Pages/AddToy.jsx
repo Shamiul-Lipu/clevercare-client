@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from 'sweetalert'
 
 const AddToy = () => {
     const user = 'asi'
@@ -37,6 +38,17 @@ const AddToy = () => {
             toy_name, seller_name, seller_email, categoryName, price, rating, quantity, imageUrl, metaTextDescription
         };
         console.log(dataObj)
+        fetch('http://localhost:5000/postToy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataObj)
+        })
+            .then(res => {
+                res.json();
+                swal("Good job!", "Your Toy Successfully added!", "success");
+            })
     };
 
     return (

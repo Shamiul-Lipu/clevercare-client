@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 const Category = ({ categoryTab }) => {
     const [data, setData] = useState([])
-    console.log(data)
+    // console.log(data)
     useEffect(() => {
-        fetch(`http://localhost:5000/all_toy_data?categoryName=${categoryTab}`)
+        fetch(`http://localhost:5000/all_toy?categoryName=${categoryTab}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [categoryTab])

@@ -15,14 +15,14 @@ const AllToys = () => {
 
     useEffect(() => {
         fetch(
-            `http://localhost:5000/all_toy_data/${searchText}`
+            `http://localhost:5000/all_toy_data/${searchText}?&limit=${dataLimit}`
         )
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
                 setToys(data);
             });
-    }, [searchText]);
+    }, [dataLimit, searchText]);
 
     const handlerSearch = () => {
         console.log(searchText);
@@ -78,7 +78,7 @@ const AllToys = () => {
                     </table>
                 </div>
             </div>
-            <button onClick={() => setDataLimit(100)} className={`btn btn-primary ${dataLimit === 100 && dataLimit != 20 ? 'hidden' : 'block'}`}  >
+            <button onClick={() => setDataLimit(100)} className={`btn btn-primary ${dataLimit === 20 ? 'block' : 'hidden'}`}  >
                 show all
             </button>
         </section>
