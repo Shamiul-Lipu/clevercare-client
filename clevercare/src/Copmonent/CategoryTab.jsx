@@ -1,17 +1,37 @@
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Category from './Category';
 
 const CategoryTab = () => {
-    return (
-        <div>
-            <Tabs>
-                <TabList>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
-                    <Tab>Title 3</Tab>
-                </TabList>
+    const toyCategories = [
+        "Mathematics",
+        "Science and Discovery Kits",
+        "Language and Literacy Kits",
+        "Language and Literacy Kits",
+        "Arts and Crafts Kits"
+    ];
 
-                <TabPanel>
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/all_toy_data?categoryName=${Mathematics}`)
+    //         .then(res => res.json())
+    //         .the(data => console.log(data))
+    // }, [])
+    return (
+        <div className='py-12 px-2'>
+            <h3 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-transparent bg-gradient-to-r from-blue-800 via-purple-800 to-emerald-800 bg-clip-text py-5 text-center"></h3>
+            <Tabs>
+                <TabList className={`bg-slate-300 rounded-lg`}>
+                    {
+                        toyCategories.map((categoryTab, i) => <Tab key={i}><h3 className='text-bold'>{categoryTab}</h3></Tab>)
+                    }
+                </TabList>
+                {
+                    toyCategories.map((categoryTab, i) => <TabPanel key={i}>
+                        <Category categoryTab={categoryTab}></Category>
+                    </TabPanel>)
+                }
+                {/* <TabPanel>
                     <h2>Any content 1</h2>
                 </TabPanel>
                 <TabPanel>
@@ -20,6 +40,12 @@ const CategoryTab = () => {
                 <TabPanel>
                     <h2>Any content 3</h2>
                 </TabPanel>
+                <TabPanel>
+                    <h2>Any content 3</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Any content 3</h2>
+                </TabPanel> */}
             </Tabs>
         </div>
     );
