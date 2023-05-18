@@ -26,7 +26,6 @@ const AllToys = () => {
 
     const handlerSearch = () => {
         console.log(searchText);
-
     };
 
 

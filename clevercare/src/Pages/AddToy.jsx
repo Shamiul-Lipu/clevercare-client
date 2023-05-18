@@ -16,7 +16,7 @@ const AddToy = () => {
     );
 
     const handleChangeSelectedValue = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setselectedToyCategory(event.target.value);
     };
 
@@ -37,7 +37,7 @@ const AddToy = () => {
         const dataObj = {
             toy_name, seller_name, seller_email, categoryName, price, rating, quantity, imageUrl, metaTextDescription
         };
-        console.log(dataObj)
+        // console.log(dataObj)
         fetch('http://localhost:5000/postToy', {
             method: 'POST',
             headers: {
@@ -78,7 +78,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Seller Email</span>
                         </label>
-                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" readOnly />
+                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
                     </div>
 
                     <div className="form-control">
