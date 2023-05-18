@@ -3,10 +3,11 @@ import { useState } from "react";
 const AddToy = () => {
     const user = 'asi'
     const toyCategories = [
-        "Math",
+        "Mathematics",
         "Science",
         "Language",
         "Engineering",
+        "Crafts"
     ];
 
     const [selectedToyCategory, setselectedToyCategory] = useState(
@@ -63,7 +64,7 @@ const AddToy = () => {
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text">Seller Email</span>
                         </label>
                         <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" readOnly />
                     </div>
@@ -88,7 +89,7 @@ const AddToy = () => {
                     </div>
                 </div>
 
-                <div className="form-control">
+                <div className="form-control py-5">
                     <label htmlFor="imageUrl" className="form-label">
                         Toy Image URL
                     </label>
@@ -132,7 +133,7 @@ const AddToy = () => {
 
                 <div className="col-12">
                     <button type="submit" className="btn btn-primary">
-                        Upload Your Toy
+                        Upload Your Toy!
                     </button>
                 </div>
             </form>
