@@ -7,12 +7,12 @@ import { useState } from 'react';
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const user = 'all good';
-    console.log(isMenuOpen)
+    // console.log(isMenuOpen)
     const handleLogOut = () => {
 
     }
 
-    const navItem = <ul className='items-center space-x-8 md:flex '>
+    const navItem = <ul className='items-center justify-center py-1 space-x-8 md:flex '>
         <li>
             <NavLink
                 to='/'

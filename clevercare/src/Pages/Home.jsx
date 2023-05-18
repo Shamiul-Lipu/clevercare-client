@@ -1,9 +1,12 @@
+import Banner from "../Copmonent/Banner";
+import CategoryTab from "../Copmonent/CategoryTab";
 
 const Home = () => {
     return (
-        <div>
-            <h1>HOME</h1>
-        </div>
+        <>
+            <Banner></Banner>
+            <CategoryTab></CategoryTab>
+        </>
     );
 };
 
