@@ -1,9 +1,15 @@
-import { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-hot-toast';
+import swal from 'sweetalert';
 
 
 const Register = () => {
     const [error, setError] = useState("");
+    const { createUser, auth } = useContext(AuthContext);
 
 
     const handleSubmit = (event) => {
@@ -17,7 +23,27 @@ const Register = () => {
         if (password.length < 6) {
             setError('Password must be at least 6 characters long')
         }
-        console.log(name, photo, email, password)
+        // console.log(name, photo, email, password)
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: `${photo}`
+                })
+                toast.success('User Successfully Created!', {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    }
+                })
+                swal("Successfully", "User Created!", "success");
+                // console.log(createdUser)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (

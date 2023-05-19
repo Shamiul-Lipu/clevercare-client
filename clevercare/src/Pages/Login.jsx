@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from '../Provider/AuthProvider';
+import swal from 'sweetalert';
 
 
 
 const Login = () => {
     const [error, setError] = useState("");
-
+    const { signInUser } = useContext(AuthContext);
 
     // Email Login
     const handleLogin = e => {
@@ -15,9 +17,17 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        if (password.length < 6) {
-            return setError('Password must be at least 6 characters long');
-        }
+
+        signInUser(email, password)
+            .then(result => {
+                const currentUser = result.user;
+                console.log(currentUser)
+                swal("User Login!", "Successfull!", "success")
+            })
+            .catch(error => {
+                setError(error.message);
+                // console.log(error);
+            })
 
     }
 

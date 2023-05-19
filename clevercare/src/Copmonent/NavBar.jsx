@@ -2,14 +2,17 @@
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../assets/icons/playtime.png'
 import { HiUserCircle } from "react-icons/hi2";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
+import { FiAlignLeft, FiX } from "react-icons/fi";
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const user = 'all good';
-    // console.log(isMenuOpen)
+    const { user, logOut } = useContext(AuthContext)
     const handleLogOut = () => {
-
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
     }
 
     const navItem = <ul className='items-center justify-center py-1 space-x-8 md:flex '>
@@ -96,39 +99,50 @@ const NavBar = () => {
                     </Link>
 
                     {/* User display section */}
-                    {user && (
-                        <label tabIndex={0} className='btn btn-ghost btn-circle avatar'>
-                            <div className='w-10 h-10 rounded-full relative'>
-                                {user?.photoURL ? (
-                                    <img src={user?.photoURL} alt='User Avatar' className='w-full h-full rounded-full' />
-                                ) : (
-                                    <HiUserCircle className='w-full h-full text-gray-400' />
-                                )}
-                                <div className='absolute inset-0 rounded-full bg-gray-900 opacity-0 hover:opacity-100 flex items-center justify-center'>
-                                    {user?.displayName ? (
-                                        <span className='bg-gray-900 text-white py-1 px-2 rounded'>{user.displayName}</span>
-                                    ) : (
-                                        <span className='bg-gray-900 text-white py-1 px-2 rounded'>Name not found</span>
-                                    )}
+                    {
+                        user && (
+                            <label tabIndex={0} className={`btn btn-ghost btn-circle avatar`}>
+                                <div className={` w-40  rounded-full`}>
+                                    {
+                                        user && (
+                                            user?.photoURL
+                                                ? <img src={user?.photoURL} />
+                                                : <HiUserCircle className='w-full h-full' />
+                                        )
+                                    }
+                                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
+                                        {
+                                            user && (
+                                                user?.displayName
+                                                    ? <span className="bg-gray-900 text-white py-1 px-2 rounded">
+                                                        {user.displayName}
+                                                    </span>
+                                                    : <span className="bg-gray-900 text-white py-1 px-2 rounded">
+                                                        Name not found
+                                                    </span>
+                                            )
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        </label>
-                    )}
+
+                            </label>
+                        )
+                    }
 
                     {/* Nav Items Section */}
                     <div className='hidden lg:flex'>{navItem}</div>
 
                     {/* Mobile Menu Button */}
                     <div className='lg:hidden'>
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='btn btn-info'>
-                            {isMenuOpen ? 'Close' : 'Menu'}
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='btn btn-outline'>
+                            {isMenuOpen ? <FiX className='w-7 h-7' /> : <FiAlignLeft className='w-7 h-7' />}
                         </button>
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
                 <div
-                    className={`lg:hidden transition-transform duration-100 ease-in-out  ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+                    className={`lg:hidden transition-transform duration-1000 ease-in-out  ${isMenuOpen ? 'translate-y-0' : '-translate-y-1/3'
                         }`}
                 >
                     {isMenuOpen && <>{navItem}</>}
