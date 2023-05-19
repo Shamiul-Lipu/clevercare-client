@@ -16,7 +16,7 @@ const AllToysTable = ({ toy, i }) => {
                 <td>{/* onClick={() => handleDelete(_id)}  */}{toy_name}</td>
                 <td>{categoryName}</td>
                 <td>{seller_name}</td>
-                <td>{price}</td>
+                <td>${price}</td>
                 <td>{quantity} </td>
                 <td>
                     {/* <button><FaTrash /></button> */}
@@ -25,7 +25,7 @@ const AllToysTable = ({ toy, i }) => {
                         Delete
                     </button> */}
                     <Link to={`/toy/${_id}`}>
-                        <button onClick={() => user ? '' : toast.error("You have to login to see details!", {
+                        <button onClick={() => user ? '' : toast.error("You have to log in first to view details!", {
                             style: {
                                 borderRadius: '10px',
                                 background: '#333',

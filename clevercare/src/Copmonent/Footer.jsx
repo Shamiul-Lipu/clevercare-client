@@ -25,9 +25,9 @@ const Footer = () => {
                 </div>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
-                <div className="items-center grid-flow-col">
+                <div className="items-center grid-flow-col font-semibold">
                     <img className="w-20" src="https://i.ibb.co/18q6yC5/playtime.png" alt="logo" />
-                    <p>ClaverCare Industries Ltd. <br />Empowering children through innovative and engaging educational toys since 1992</p>
+                    <p><span className="font-bold">ClaverCare Industries Ltd.</span> <br />Empowering children through innovative and engaging educational toys since 1992</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">
@@ -37,6 +37,10 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
+            <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300 flex justify-center">
+                <p className="font-medium">&copy; 2023 ClaverCare Industries Ltd. All rights reserved.</p>
+            </footer>
+
         </>
     );
 };

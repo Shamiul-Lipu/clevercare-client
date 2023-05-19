@@ -24,7 +24,7 @@ const Details = () => {
                             <h1 className="text-5xl font-bold">{details.toy_name}</h1>
                             <div className="grid gap-3 py-4 text-lg">
                                 <p className="font-bold text-blue-800">Ratings: {details.rating} out of 5</p>
-                                <p className="font-bold text-green-700"> {details.price}</p>
+                                <p className="font-bold text-green-700">$ {details.price}</p>
                                 <p><span className="font-bold">Toy Category:</span> {details.categoryName}</p>
                                 <p><span className="font-bold">Available Quantity:</span> {details.quantity}</p>
                                 <p className=""><span className="font-bold">Seller Name:</span> {details.seller_name}</p>

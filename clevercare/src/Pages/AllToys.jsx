@@ -48,7 +48,7 @@ const AllToys = () => {
         const fetchData = async () => {
             try {
                 const value = seletedPrice.split(' ')[1]
-                console.log(value);
+                // console.log(value);
                 const res = await fetch(`http://localhost:5000/all_toy_data?limit=${dataLimit}&value=${value}`)
                 const data = await res.json();
                 setToys(data)

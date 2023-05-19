@@ -10,11 +10,14 @@ const Gallery = () => {
             .then(data => setToys(data))
     }, [])
     return (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 py-7">
-            {
-                toys.map((toy, i) => <GalleryCard key={i} toy={toy}></GalleryCard>)
-            }
-        </div>
+        <section>
+            <h3 className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-800 via-purple-800 to-emerald-800 bg-clip-text py-5 text-center">Discover a visual showcase of available products</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 py-7">
+                {
+                    toys.map((toy, i) => <GalleryCard key={i} toy={toy}></GalleryCard>)
+                }
+            </div>
+        </section>
     );
 };
 

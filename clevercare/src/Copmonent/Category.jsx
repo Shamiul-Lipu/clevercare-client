@@ -27,7 +27,7 @@ const Category = ({ categoryTab }) => {
                             <p>Ratings: {details.rating} out of 5</p>
                             <div className="card-actions justify-end">
                                 <Link to={`/toy/${details._id}`}>
-                                    <button onClick={() => user ? '' : toast.error("You have to login to see details!", {
+                                    <button onClick={() => user ? '' : toast.error("You have to log in first to view details!", {
                                         style: {
                                             borderRadius: '10px',
                                             background: '#333',

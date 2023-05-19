@@ -19,7 +19,7 @@ const CategoryTab = () => {
     // }, [])
     return (
         <div className='py-12 px-2'>
-            <h3 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-transparent bg-gradient-to-r from-blue-800 via-purple-800 to-emerald-800 bg-clip-text py-5 text-center"></h3>
+            <h3 className="text-5xl font-extrabold text-transparent bg-gradient-to-r from-blue-800 via-purple-800 to-emerald-800 bg-clip-text py-5 text-center">Explore products based on different categories</h3>
             <Tabs>
                 <TabList className={`bg-slate-300 rounded-lg`}>
                     {
@@ -31,21 +31,6 @@ const CategoryTab = () => {
                         <Category categoryTab={categoryTab}></Category>
                     </TabPanel>)
                 }
-                {/* <TabPanel>
-                    <h2>Any content 1</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
-                </TabPanel> */}
             </Tabs>
         </div>
     );
