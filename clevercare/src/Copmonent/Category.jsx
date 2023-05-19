@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Category = ({ categoryTab }) => {
     const [data, setData] = useState([])
+    const { user } = useContext(AuthContext)
     // console.log(data)
     useEffect(() => {
         fetch(`http://localhost:5000/all_toy?categoryName=${categoryTab}`)
@@ -22,7 +26,16 @@ const Category = ({ categoryTab }) => {
                             <p>Price: {details.price}</p>
                             <p>Ratings: {details.rating} out of 5</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-primary">View Details</button>
+                                <Link to={`/toy/${details._id}`}>
+                                    <button onClick={() => user ? '' : toast.error("You have to login to see details!", {
+                                        style: {
+                                            borderRadius: '10px',
+                                            background: '#333',
+                                            color: '#fff',
+                                        },
+                                    })} className="btn btn-primary">View Details</button>
+                                </Link>
+
                             </div>
                         </div>
                     </div>

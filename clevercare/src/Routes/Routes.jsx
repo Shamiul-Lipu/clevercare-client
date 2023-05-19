@@ -7,6 +7,7 @@ import MyToys from "../Pages/MyToys";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import Details from "../Copmonent/Details";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register />
+            },
+            {
+                path: '/toy/:id',
+                element: <Details />
             }
         ]
     },
