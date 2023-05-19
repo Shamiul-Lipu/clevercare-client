@@ -1,15 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
 import swal from 'sweetalert';
+import { FcGoogle } from 'react-icons/fc';
 
 
 const Register = () => {
     const [error, setError] = useState("");
-    const { createUser, auth } = useContext(AuthContext);
+    const { createUser, auth, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleSubmit = (event) => {
@@ -40,9 +44,24 @@ const Register = () => {
                 })
                 swal("Successfully", "User Created!", "success");
                 // console.log(createdUser)
+                form.reset();
+                navigate('/')
             })
             .catch(error => {
                 console.log(error)
+            })
+    }
+    // Google Login
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser)
+                navigate(from, { replace: true })
+                swal("Successfully", "User Created!", "success");
+            })
+            .catch(error => {
+                console.log(error);
             })
     }
 
@@ -75,6 +94,12 @@ const Register = () => {
 
                         <button type='submit' className='btn btn-primary w-full'>Register</button>
                     </form>
+                    <div className='flex justify-evenly pb-2'>
+                        <p>or Register with</p>
+                    </div>
+                    <div className='flex justify-evenly'>
+                        <button onClick={handleGoogleLogin} className="btn btn-outline "><FcGoogle className='m-1 w-5 h-5' /> Google</button>
+                    </div>
 
                     <Link to='/login'>
                         <p className="link link-primary font-semibold">Already have an account?</p>

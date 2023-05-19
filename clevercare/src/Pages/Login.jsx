@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useState } from 'react';
-import { Link, } from 'react-router-dom';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../Provider/AuthProvider';
 import swal from 'sweetalert';
@@ -8,7 +9,10 @@ import swal from 'sweetalert';
 
 const Login = () => {
     const [error, setError] = useState("");
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     // Email Login
     const handleLogin = e => {
@@ -21,14 +25,29 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 const currentUser = result.user;
-                console.log(currentUser)
+                // console.log(currentUser)
+                form.reset();
+                navigate(from, { replace: true })
                 swal("User Login!", "Successfull!", "success")
             })
             .catch(error => {
                 setError(error.message);
                 // console.log(error);
             })
+    }
 
+    // Google Login
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser)
+                navigate(from, { replace: true })
+                swal("Good job!", "User Logged In Successfully!", "success");
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -66,7 +85,7 @@ const Login = () => {
                             <p>or Login with</p>
                         </div>
                         <div className='flex justify-evenly'>
-                            <button className="btn btn-outline "><FcGoogle className='m-1 w-5 h-5' /> Google</button>
+                            <button onClick={handleGoogleLogin} className="btn btn-outline "><FcGoogle className='m-1 w-5 h-5' /> Google</button>
                         </div>
 
                         <Link to='/register'>

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import swal from 'sweetalert'
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddToy = () => {
-    const user = 'asi'
+    const { user } = useContext(AuthContext);
     const toyCategories = [
         "Mathematics",
         "Science",
@@ -78,14 +79,14 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Seller Email</span>
                         </label>
-                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" readOnly />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
-                        <input type="text" name="price" defaultValue={'$' + 0} className="input input-bordered" readOnly />
+                        <input type="text" name="price" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
