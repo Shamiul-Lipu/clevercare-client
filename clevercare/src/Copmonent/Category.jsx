@@ -16,7 +16,7 @@ const Category = ({ categoryTab }) => {
     return (
         <div>
             {
-                data && data.map((details, i) => <div key={i}>
+                data && data.slice(0, 4).map((details, i) => <div key={i}>
 
                     <div className="card card-side bg-base-100 shadow-xl my-6">
                         <figure><img className="w-96 h-40" src={details.imageUrl} /></figure>
