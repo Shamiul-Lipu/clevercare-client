@@ -40,7 +40,7 @@ const AllToys = () => {
     // console.log(s);
 
     const handleChangeSelectedValue = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setSelectedPrice(event.target.value)
     };
     useEffect(() => {
