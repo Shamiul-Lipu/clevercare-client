@@ -16,7 +16,7 @@ const Engage = () => {
     }, [])
     // console.log(toys)
     return (
-        <div>
+        <section>
             {/* engage */}
             <div className="grid grid-cols-2 gap-3 bg-slate-100">
                 <div className="py-4">
@@ -102,7 +102,7 @@ const Engage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

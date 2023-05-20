@@ -1,0 +1,134 @@
+[
+    {
+        "course": "Child Health and Wellness: A Comprehensive Guide",
+        "category": "Parenting",
+        "img": "https://i.ibb.co/XtNhW22/p5.jpg",
+        "instructor": "Dr. Sarah Johnson",
+        "reviews": 4.8,
+        "reviewed": 1892,
+        "price": 49,
+        "description": "Equip yourself with the knowledge and skills to ensure the health and well-being of your child. Join Dr. Sarah Johnson, a renowned pediatrician, as she covers essential topics such as nutrition, immunization, common illnesses, and promoting a healthy lifestyle. This course provides practical advice and evidence-based strategies to support your child's physical and mental development.",
+        "for": "Parents"
+    },
+    {
+        "course": "Understanding Child Development Milestones",
+        "category": "Parenting",
+        "img": "https://i.ibb.co/4jxPVXh/p6.jpg",
+        "instructor": "Dr. Emily Thompson",
+        "reviews": 4.7,
+        "reviewed": 1625,
+        "price": 59,
+        "description": "Discover the key milestones in your child's development from infancy to adolescence. Learn from child development expert Emily Thompson as she guides you through the physical, cognitive, and social-emotional milestones at each stage. Gain insights and practical tips to foster your child's growth, create enriching environments, and support their unique needs.",
+        "for": "Parents"
+    },
+    {
+        "course": "Promoting Positive Mental Health in Children",
+        "category": "Parenting",
+        "img": "https://i.ibb.co/tc10KP7/p4.png",
+        "instructor": "Dr. Michael Roberts",
+        "reviews": 4.9,
+        "reviewed": 2150,
+        "price": 45,
+        "description": "Learn how to nurture your child's mental health and well-being. Dr. Michael Roberts, a child psychologist, provides valuable insights into understanding and addressing common mental health challenges in children. Explore effective strategies for building resilience, promoting self-esteem, and fostering emotional intelligence in your child.",
+        "for": "Parents"
+    },
+    {
+        "course": "Positive Discipline: Effective Strategies for Parents",
+        "category": "Parenting",
+        "img": "https://i.ibb.co/XS96TrS/p3.jpg",
+        "instructor": "Dr. Laura Davis",
+        "reviews": 4.6,
+        "reviewed": 1789,
+        "price": 39,
+        "description": "Discover positive discipline techniques to foster a respectful and harmonious family environment. Join parenting expert Laura Davis as she shares proven strategies for setting boundaries, managing behavior, and promoting self-discipline in your child. Gain practical skills to navigate challenges, build strong parent-child relationships, and promote healthy development.",
+        "for": "Parents"
+    },
+    {
+        "course": "Parenting with Empathy and Emotional Intelligence",
+        "category": "Parenting",
+        "img": "https://i.ibb.co/xfjfS7T/p1.jpg",
+        "instructor": "Dr. Daniel Anderson",
+        "reviews": 4.7,
+        "reviewed": 1935,
+        "price": 55,
+        "description": "Learn how to cultivate empathy and emotional intelligence in your parenting journey. Dr. Daniel Anderson, a child psychologist, provides valuable insights and practical strategies to enhance your understanding of your child's emotions, build strong connections, and teach empathy. Develop effective communication skills and create a nurturing environment for your child's emotional well-being.",
+        "for": "Parents"
+    },
+    {
+        "course": "Positive Parenting: Building Stronger Connections with Your Child",
+        "category": "Parenting",
+        "img": "https://i.ibb.co/xgF4rSH/p2.jpg",
+        "instructor": "Dr. Sarah Johnson",
+        "reviews": 4.7,
+        "reviewed": 1852,
+        "price": 59,
+        "description": "Enhance your parenting skills and create a positive and nurturing environment for your child. Join renowned child psychologist Dr. Sarah Johnson as she shares evidence-based strategies to build stronger connections, communicate effectively, and promote positive behavior. Gain practical tools to navigate challenges, foster emotional intelligence, and support your child's healthy development.",
+        "for": "Parents"
+    },
+    {
+        "course": "Exploring the World: Science and Nature for Young Explorers",
+        "category": "Child",
+        "img": "https://i.ibb.co/fCVZVcr/c2.jpg",
+        "instructor": "Professor Emma Thompson",
+        "reviews": 4.8,
+        "reviewed": 1892,
+        "price": 49,
+        "description": "Ignite your child's curiosity and foster a love for science and nature. Join Professor Emma Thompson as she guides young explorers on an exciting journey of discovery. Through hands-on activities, interactive lessons, and engaging experiments, children will learn about the wonders of the natural world, from animals and plants to the laws of physics and chemistry.",
+        "for": "Child 4-8 years old"
+    },
+    {
+        "course": "Artistic Adventures: Unleashing Creativity through Arts and Crafts",
+        "category": "Child",
+        "img": "https://i.ibb.co/4VvbMkX/c1.png",
+        "instructor": "Art Teacher Sophia Johnson",
+        "reviews": 4.7,
+        "reviewed": 1625,
+        "price": 59,
+        "description": "Nurture your child's artistic talents and imagination with this interactive arts and crafts course. Led by art teacher Sophia Johnson, children will explore various art forms, experiment with different materials, and create their own masterpieces. From painting and sculpture to collage and mixed media, this course encourages self-expression and fosters a lifelong love for the arts.",
+        "for": "Child 4-8 years old"
+    },
+    {
+        "course": "Mathematics Marvels: Fun and Games with Numbers",
+        "category": "Child",
+        "img": "https://i.ibb.co/5TfW0L5/c4.jpg",
+        "instructor": "Mathematician John Roberts",
+        "reviews": 4.9,
+        "reviewed": 2150,
+        "price": 45,
+        "description": "Introduce your child to the wonders of mathematics through fun and engaging activities. Mathematician John Roberts will take young learners on a journey where they will discover the magic of numbers, patterns, and problem-solving. With games, puzzles, and real-world examples, children will develop essential math skills and a positive attitude towards learning.",
+        "for": "Child 4-8 years old"
+    },
+    {
+        "course": "Language Adventures: Building Strong Communication Skills",
+        "category": "Child",
+        "img": "https://i.ibb.co/S04gnjH/c3.png",
+        "instructor": "English Teacher Laura Davis",
+        "reviews": 4.6,
+        "reviewed": 1789,
+        "price": 39,
+        "description": "Enhance your child's language and communication skills in a fun and interactive way. Led by experienced English teacher Laura Davis, this course focuses on vocabulary development, reading comprehension, and effective communication. Through storytelling, games, and engaging exercises, children will build a strong foundation in language arts and develop a love for reading and writing.",
+        "for": "Child 4-8 years old"
+    },
+    {
+        "course": "Physical Fitness Fun: Active Play for Healthy Kids",
+        "category": "Child",
+        "img": "https://i.ibb.co/WpZbzv5/c5.jpg",
+        "instructor": "Fitness Coach Daniel Anderson",
+        "reviews": 4.7,
+        "reviewed": 1935,
+        "price": 55,
+        "description": "Get your child moving and promote a healthy and active lifestyle with this physical fitness course. Led by fitness coach Daniel Anderson, children will participate in fun exercises, games, and sports activities that improve coordination, strength, and flexibility. Through play and teamwork, children will develop fundamental motor skills and learn the importance of staying active.",
+        "for": "Child 4-8 years old"
+    },
+    {
+        "course": "Creative Storytelling: Unleashing Imagination through Writing",
+        "category": "Child",
+        "img": "https://i.ibb.co/GWz1jPP/c6.jpg",
+        "instructor": "Author and Storyteller Emily Thompson",
+        "reviews": 4.8,
+        "reviewed": 2063,
+        "price": 42,
+        "description": "Ignite your child's imagination and nurture their storytelling abilities with this creative writing course. Led by renowned author and storyteller Emily Thompson, children will explore the art of crafting compelling stories, developing characters, and creating vivid settings. Through engaging writing prompts, games, and exercises, children will express their thoughts and ideas in a fun and imaginative way.",
+        "for": "Child 4-8 years old"
+    }
+]

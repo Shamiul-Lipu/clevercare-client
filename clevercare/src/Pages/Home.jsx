@@ -1,5 +1,6 @@
 import Banner from "../Copmonent/Banner";
 import CategoryTab from "../Copmonent/CategoryTab";
+import Courses from "../Copmonent/ExtraFeatures/Courses";
 import Engage from "../Copmonent/ExtraFeatures/Engage";
 import Gallery from "../Copmonent/Gallery";
 import useTitle from "../Hooks/useTitle";
@@ -17,6 +18,7 @@ const Home = () => {
             </section>
             <section>
                 {/* Extra Features */}
+                <Courses></Courses>
                 <Engage></Engage>
             </section>
         </>
