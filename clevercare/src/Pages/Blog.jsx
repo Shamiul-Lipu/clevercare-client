@@ -1,5 +1,7 @@
+import useTitle from "../Hooks/useTitle";
 
 const Blog = () => {
+    useTitle('Blog');
     return (
         <section>
             <div className='py-4'>

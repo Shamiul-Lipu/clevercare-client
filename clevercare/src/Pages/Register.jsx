@@ -6,9 +6,11 @@ import { updateProfile } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
 import swal from 'sweetalert';
 import { FcGoogle } from 'react-icons/fc';
+import useTitle from '../Hooks/useTitle';
 
 
 const Register = () => {
+    useTitle('Register');
     const [error, setError] = useState("");
     const { createUser, auth, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();

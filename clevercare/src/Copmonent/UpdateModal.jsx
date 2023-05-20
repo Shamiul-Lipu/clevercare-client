@@ -14,7 +14,7 @@ const UpdateModal = () => {
             .then((data) => {
                 setDetails(data);
             });
-    }, []);
+    }, [id]);
     console.log(details);
 
     const handleSubmit = (event) => {

@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import swal from 'sweetalert'
 import { AuthContext } from "../Provider/AuthProvider";
+import useTitle from "../Hooks/useTitle";
 
 const AddToy = () => {
+    useTitle('Add A Toy');
     const { user } = useContext(AuthContext);
     const toyCategories = [
         "Mathematics",

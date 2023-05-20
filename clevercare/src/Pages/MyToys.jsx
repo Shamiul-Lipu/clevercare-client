@@ -3,8 +3,10 @@ import UsersToy from "../Copmonent/UsersToy";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import swal from "sweetalert";
+import useTitle from "../Hooks/useTitle";
 
 const MyToys = () => {
+    useTitle('My Toys');
     const [toys, setToys] = useState([]);
     const [reload, setReload] = useState(false)
     const { user } = useContext(AuthContext);

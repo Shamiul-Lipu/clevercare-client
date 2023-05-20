@@ -4,19 +4,36 @@ import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../Provider/AuthProvider';
 import swal from 'sweetalert';
+import useTitle from '../Hooks/useTitle';
 
 
 
 const Login = () => {
+    const [logged, setLogged] = useState(false)
     const [error, setError] = useState("");
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    useTitle('Login');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
+
+    // if user not looged in but access into private route this will alert user
+    if (!logged) {
+        if (location.state?.from?.pathname == '/my-toys' || location.state?.from?.pathname == '/add-toy') {
+            swal({
+                title: "User Not Logged In",
+                text: "Please log in to access this feature!",
+                icon: "error",
+                timer: 2000
+            })
+        }
+    }
+
     // Email Login
     const handleLogin = e => {
         e.preventDefault();
+        setLogged(true)
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -38,6 +55,7 @@ const Login = () => {
 
     // Google Login
     const handleGoogleLogin = () => {
+        setLogged(true)
         signInWithGoogle()
             .then(result => {
                 const loggedUser = result.user;

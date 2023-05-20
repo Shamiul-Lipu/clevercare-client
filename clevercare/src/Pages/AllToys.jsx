@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import AllToysTable from "../Copmonent/AllToysTable";
+import useTitle from "../Hooks/useTitle";
 
 const AllToys = () => {
+    useTitle('All Toys');
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState("");
     const [dataLimit, setDataLimit] = useState(20);
