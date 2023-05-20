@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import Details from "../Copmonent/Details";
 import ErrorPage from "../Pages/ErrorPage";
 import UpdateModal from "../Copmonent/UpdateModal";
+import Blog from "../Pages/Blog";
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <UpdateModal />
+            },
+            {
+                path: 'blog',
+                element: <Blog />
             }
         ]
     },

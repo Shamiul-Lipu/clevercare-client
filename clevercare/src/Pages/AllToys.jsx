@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import AllToysTable from "../Copmonent/AllToysTable";
 
@@ -59,7 +60,7 @@ const AllToys = () => {
             }
         }
         fetchData()
-    }, [seletedPrice])
+    }, [dataLimit, seletedPrice])
 
 
     return (
