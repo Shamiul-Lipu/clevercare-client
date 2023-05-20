@@ -15,7 +15,7 @@ const UpdateModal = () => {
                 setDetails(data);
             });
     }, [id]);
-    console.log(details);
+    // console.log(details);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +26,7 @@ const UpdateModal = () => {
         const toy_name = form.toy_name.value;
         const seller_name = form.name.value;
         const seller_email = form.email.value;
-        const price = form.price.value;
+        const price = parseInt(form.price.value);
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const imageUrl = form.imageUrl.value;
@@ -124,7 +124,7 @@ const UpdateModal = () => {
                                     <label className="label">
                                         <span className="label-text">Price</span>
                                     </label>
-                                    <input type="text" name="price" defaultValue={details.price} className="input input-bordered" required />
+                                    <input type="number" name="price" defaultValue={details.price} className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">

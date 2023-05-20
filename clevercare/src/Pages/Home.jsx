@@ -17,7 +17,7 @@ const Home = () => {
                 <CategoryTab></CategoryTab>
             </section>
             <section>
-                {/* Extra Features */}
+                {/* Extra seteion */}
                 <Courses></Courses>
                 <Engage></Engage>
             </section>

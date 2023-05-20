@@ -21,9 +21,9 @@ const GalleryCard = ({ toy }) => {
 
                 </div>
             </div> */}
-            <div className="" data-aos="fade-up"
+            <div className="px-1" data-aos="fade-up"
                 data-aos-duration="3000">
-                <div className="relative card w-96 h-96 bg-base-100 shadow-xl">
+                <div className="relative card h-96 bg-base-100 shadow-xl">
                     <figure>
                         {toy.imageUrl && <img src={toy.imageUrl} alt="img" />}
                     </figure>

@@ -27,9 +27,10 @@ const CategoryTab = () => {
                     }
                 </TabList>
                 {
-                    toyCategories.map((categoryTab, i) => <TabPanel key={i}>
+                    toyCategories && toyCategories.map((categoryTab, i) => <TabPanel key={i}>
                         <Category categoryTab={categoryTab}></Category>
                     </TabPanel>)
+
                 }
             </Tabs>
         </div>

@@ -62,7 +62,7 @@ const AllToys = () => {
             }
         }
         fetchData()
-    }, [dataLimit, seletedPrice])
+    }, [seletedPrice])
 
 
     return (

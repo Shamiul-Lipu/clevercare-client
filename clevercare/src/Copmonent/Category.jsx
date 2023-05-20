@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import { FaStar } from "react-icons/fa";
 
 const Category = ({ categoryTab }) => {
     const [data, setData] = useState([])
@@ -23,8 +24,8 @@ const Category = ({ categoryTab }) => {
                         <div className="card-body">
                             <h2 className="card-title">{details.toy_name}</h2>
                             <p>{details.metaTextDescription}</p>
-                            <p>Price: {details.price}</p>
-                            <p>Ratings: {details.rating} out of 5</p>
+                            <p className="font-semibold">Price: $ {details.price}</p>
+                            <p className="flex items-center font-semibold">Ratings: {details.rating} <FaStar className="mx-1 text-yellow-400" />  out of 5</p>
                             <div className="card-actions justify-end">
                                 <Link to={`/toy/${details._id}`}>
                                     <button onClick={() => user ? '' : toast.error("You have to log in first to view details!", {

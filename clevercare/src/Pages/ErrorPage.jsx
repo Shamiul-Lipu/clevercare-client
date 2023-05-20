@@ -1,13 +1,13 @@
 import { Link, useRouteError } from 'react-router-dom'
 import Lottie from "lottie-react";
-import errorz from "../assets/icons/errorz.json";
+import errorz from "../assets/icons/94992-error-404.json";
 import useTitle from '../Hooks/useTitle';
 
 const ErrorPage = () => {
     useTitle('Error Page');
     const { error, status } = useRouteError()
     return (
-        <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
+        <section className='flex items-center p-16 bg-gray-100 text-gray-900'>
             <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
                 <div className='w-2/4'>
                     <Lottie className="" animationData={errorz} />

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import swal from 'sweetalert'
 import { AuthContext } from "../Provider/AuthProvider";
 import useTitle from "../Hooks/useTitle";
+import { toast } from "react-hot-toast";
 
 const AddToy = () => {
     useTitle('Add A Toy');
@@ -31,7 +32,7 @@ const AddToy = () => {
         const seller_name = form.name.value;
         const seller_email = form.email.value;
         const categoryName = form.categoryName.value;
-        const price = form.price.value;
+        const price = parseInt(form.price.value);
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const imageUrl = form.imageUrl.value;
@@ -50,7 +51,15 @@ const AddToy = () => {
         })
             .then(res => {
                 res.json();
-                swal("Good job!", "Your Toy Successfully added!", "success");
+                swal("Good job!", "Your Toy Awaits! Check it Out in My Toy Section", "success");
+                toast.success('Your Toy Successfully added!', {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    }
+                })
+                form.reset();
             })
     };
 
@@ -88,7 +97,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
-                        <input type="text" name="price" className="input input-bordered" />
+                        <input type="number" name="price" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">

@@ -34,24 +34,28 @@ const NavBar = () => {
             </NavLink>
 
         </li>
-        <li>
-            <NavLink
-                to='/my-toys'
-                className={({ isActive }) => (isActive ? 'font-bold text-lg tracking-wide text-indigo-600 transition-colors duration-200 hover:text-blue-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400')}
-            >
-                My Toys
-            </NavLink>
+        {
+            user && <>
+                <li>
+                    <NavLink
+                        to='/my-toys'
+                        className={({ isActive }) => (isActive ? 'font-bold text-lg tracking-wide text-indigo-600 transition-colors duration-200 hover:text-blue-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400')}
+                    >
+                        My Toys
+                    </NavLink>
 
-        </li>
-        <li>
-            <NavLink
-                to='/add-toy'
-                className={({ isActive }) => (isActive ? 'font-bold text-lg tracking-wide text-indigo-600 transition-colors duration-200 hover:text-blue-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400')}
-            >
-                Add A Toy
-            </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to='/add-toy'
+                        className={({ isActive }) => (isActive ? 'font-bold text-lg tracking-wide text-indigo-600 transition-colors duration-200 hover:text-blue-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400')}
+                    >
+                        Add A Toy
+                    </NavLink>
 
-        </li>
+                </li>
+            </>
+        }
         <li>
             <NavLink
                 to='/register'
@@ -98,46 +102,51 @@ const NavBar = () => {
                         </span>
                     </Link>
 
-                    {/* User display section */}
-                    {
-                        user && (
-                            <label tabIndex={0} className={`btn btn-ghost btn-circle avatar`}>
-                                <div className={` w-40  rounded-full`}>
-                                    {
-                                        user && (
-                                            user?.photoURL
-                                                ? <img src={user?.photoURL} />
-                                                : <HiUserCircle className='w-full h-full' />
-                                        )
-                                    }
-                                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
-                                        {
-                                            user && (
-                                                user?.displayName
-                                                    ? <span className="bg-gray-900 text-white py-1 px-2 rounded">
-                                                        {user.displayName}
-                                                    </span>
-                                                    : <span className="bg-gray-900 text-white py-1 px-2 rounded">
-                                                        Name not found
-                                                    </span>
-                                            )
-                                        }
-                                    </div>
-                                </div>
 
-                            </label>
-                        )
-                    }
 
                     {/* Nav Items Section */}
                     <div className='hidden lg:flex'>{navItem}</div>
 
-                    {/* Mobile Menu Button */}
-                    <div className='lg:hidden'>
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='btn btn-outline'>
-                            {isMenuOpen ? <FiX className='w-7 h-7' /> : <FiAlignLeft className='w-7 h-7' />}
-                        </button>
+                    <div className='flex gap-5'>
+                        {/* User display section */}
+                        {
+                            user && (
+                                <label tabIndex={0} className={`btn btn-ghost btn-circle avatar`}>
+                                    <div className={` w-40  rounded-full`}>
+                                        {
+                                            user && (
+                                                user?.photoURL
+                                                    ? <img src={user?.photoURL} />
+                                                    : <HiUserCircle className='w-full h-full' />
+                                            )
+                                        }
+                                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
+                                            {
+                                                user && (
+                                                    user?.displayName
+                                                        ? <span className="bg-gray-900 text-white py-1 px-2 rounded">
+                                                            {user.displayName}
+                                                        </span>
+                                                        : <span className="bg-gray-900 text-white py-1 px-2 rounded">
+                                                            Name not found
+                                                        </span>
+                                                )
+                                            }
+                                        </div>
+                                    </div>
+
+                                </label>
+                            )
+                        }
+                        {/* Mobile Menu Button */}
+                        <div className='lg:hidden'>
+                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='btn btn-outline'>
+                                {isMenuOpen ? <FiX className='w-7 h-7' /> : <FiAlignLeft className='w-7 h-7' />}
+                            </button>
+                        </div>
                     </div>
+
+
                 </div>
 
                 {/* Mobile Menu */}
