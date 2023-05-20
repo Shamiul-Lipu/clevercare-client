@@ -10,7 +10,7 @@ const Category = ({ categoryTab }) => {
     const { user } = useContext(AuthContext)
     // console.log(data)
     useEffect(() => {
-        fetch(`http://localhost:5000/all_toy?categoryName=${categoryTab}`)
+        fetch(`https://server-side-rho-one.vercel.app/all_toy?categoryName=${categoryTab}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [categoryTab])

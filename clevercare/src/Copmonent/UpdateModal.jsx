@@ -36,7 +36,7 @@ const UpdateModal = () => {
             toy_name, categoryName, seller_name, seller_email, price, rating, quantity, imageUrl, metaTextDescription
         };
         // console.log(dataObj)
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://server-side-rho-one.vercel.app/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"

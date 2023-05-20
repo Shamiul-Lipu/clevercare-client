@@ -12,7 +12,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users_inserted_toy?seller_email=${user.email}`)
+        fetch(`https://server-side-rho-one.vercel.app/users_inserted_toy?seller_email=${user.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [user, reload])
@@ -26,7 +26,7 @@ const MyToys = () => {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                fetch(`http://localhost:5000/update/${id}`, {
+                fetch(`https://server-side-rho-one.vercel.app/update/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

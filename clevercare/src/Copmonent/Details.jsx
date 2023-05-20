@@ -7,7 +7,7 @@ const Details = () => {
     const [details, setDetails] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toy/${id}`)
+        fetch(`https://server-side-rho-one.vercel.app/toy/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setDetails(data);

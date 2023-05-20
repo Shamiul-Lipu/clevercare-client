@@ -42,7 +42,7 @@ const AddToy = () => {
             toy_name, seller_name, seller_email, categoryName, price, rating, quantity, imageUrl, metaTextDescription
         };
         // console.log(dataObj)
-        fetch('http://localhost:5000/postToy', {
+        fetch('https://server-side-rho-one.vercel.app/postToy', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
