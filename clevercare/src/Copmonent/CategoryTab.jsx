@@ -13,7 +13,7 @@ const CategoryTab = () => {
     ];
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/all_toy_data?categoryName=${Mathematics}`)
+    //     fetch(`https://server-side-rho-one.vercel.app/all_toy_data?categoryName=${Mathematics}`)
     //         .then(res => res.json())
     //         .the(data => console.log(data))
     // }, [])

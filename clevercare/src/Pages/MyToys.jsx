@@ -23,7 +23,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users_inserted_toy?seller_email=${user.email}`)
+        fetch(`https://server-side-rho-one.vercel.app/users_inserted_toy?seller_email=${user.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [user, reload])
@@ -37,7 +37,7 @@ const MyToys = () => {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                fetch(`http://localhost:5000/update/${id}`, {
+                fetch(`https://server-side-rho-one.vercel.app/update/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -77,7 +77,7 @@ const MyToys = () => {
             try {
                 const value = seletedPrice.split(' ')[1]
                 // console.log(value);
-                const res = await fetch(`http://localhost:5000/users_inserted_toy?seller_email=${user.email}&value=${value}`)
+                const res = await fetch(`https://server-side-rho-one.vercel.app/users_inserted_toy?seller_email=${user.email}&value=${value}`)
                 const data = await res.json();
                 setToys(data)
             } finally {

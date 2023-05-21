@@ -42,7 +42,7 @@ const AddToy = () => {
             toy_name, seller_name, seller_email, categoryName, price, rating, quantity, imageUrl, metaTextDescription
         };
         // console.log(dataObj)
-        fetch('http://localhost:5000/postToy', {
+        fetch('https://server-side-rho-one.vercel.app/postToy', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Toy Name</span>
                         </label>
-                        <input type="text" name="toy_name" className="input input-bordered" />
+                        <input type="text" name="toy_name" className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
@@ -97,7 +97,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
-                        <input type="number" name="price" className="input input-bordered" />
+                        <input type="number" name="price" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">

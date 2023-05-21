@@ -21,14 +21,14 @@ const AllToys = () => {
 
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/all_toy_data?limit=${dataLimit}`)
+    //     fetch(`https://server-side-rho-one.vercel.app/all_toy_data?limit=${dataLimit}`)
     //         .then(res => res.json())
     //         .then(data => setToys(data))
     // }, [dataLimit])
 
     useEffect(() => {
         fetch(
-            `http://localhost:5000/all_toy_data/${searchText}?&limit=${dataLimit}`
+            `https://server-side-rho-one.vercel.app/all_toy_data/${searchText}?&limit=${dataLimit}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -53,7 +53,7 @@ const AllToys = () => {
             try {
                 const value = seletedPrice.split(' ')[1]
                 // console.log(value);
-                const res = await fetch(`http://localhost:5000/all_toy_data?limit=${dataLimit}&value=${value}`)
+                const res = await fetch(`https://server-side-rho-one.vercel.app/all_toy_data?limit=${dataLimit}&value=${value}`)
                 const data = await res.json();
                 setToys(data)
             } finally {

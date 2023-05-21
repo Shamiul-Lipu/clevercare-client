@@ -11,7 +11,7 @@ const UpdateModal = () => {
     // console.log(id);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toy/${id}`)
+        fetch(`https://server-side-rho-one.vercel.app/toy/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setDetails(data);
@@ -38,7 +38,7 @@ const UpdateModal = () => {
             toy_name, categoryName, seller_name, seller_email, price, rating, quantity, imageUrl, metaTextDescription
         };
         // console.log(dataObj)
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://server-side-rho-one.vercel.app/update/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -132,7 +132,7 @@ const UpdateModal = () => {
                                     <label className="label">
                                         <span className="label-text">Rating</span>
                                     </label>
-                                    <input type="text" name="rating" defaultValue={details.rating} className="input input-bordered" required />
+                                    <input type="text" name="rating" defaultValue={details.rating} className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
