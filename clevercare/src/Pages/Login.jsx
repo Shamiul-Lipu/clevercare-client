@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate, } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams, } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../Provider/AuthProvider';
 import swal from 'sweetalert';
@@ -16,9 +16,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-
+    const { id } = useParams()
 
     // if user not looged in but access into private route this will alert user
+    // console.log(location.state?.from?.pathname, id)
     if (!logged) {
         if (location.state?.from?.pathname == '/my-toys' || location.state?.from?.pathname == '/add-toy') {
             swal({

@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import swal from "sweetalert";
+import useTitle from "../Hooks/useTitle";
 
 const UpdateModal = () => {
     const { id } = useParams();
     const [details, setDetails] = useState({});
+    useTitle('update toy')
     // console.log(id);
 
     useEffect(() => {
@@ -36,7 +38,7 @@ const UpdateModal = () => {
             toy_name, categoryName, seller_name, seller_email, price, rating, quantity, imageUrl, metaTextDescription
         };
         // console.log(dataObj)
-        fetch(`https://server-side-rho-one.vercel.app/${id}`, {
+        fetch(`http://localhost:5000/update/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -137,7 +139,7 @@ const UpdateModal = () => {
                                         <span className="label-text">Available quantity</span>
                                     </label>
                                     <input type="text" name="quantity"
-                                        defaultValue={details.quantity} className="input input-bordered" required />
+                                        defaultValue={details.quantity} className="input input-bordered" />
                                 </div>
                             </div>
 
@@ -150,7 +152,7 @@ const UpdateModal = () => {
                                     name="imageUrl"
                                     defaultValue={details.imageUrl}
                                     className="input input-bordered"
-                                    id="imageUrl" required
+                                    id="imageUrl"
                                 />
                             </div>
                             <div className="form-control py-5">
@@ -163,7 +165,7 @@ const UpdateModal = () => {
                                     defaultValue={details.metaTextDescription}
                                     name="metaTextDescription"
                                     id="metaTextDescription"
-                                    required
+
                                 />
                             </div>
 

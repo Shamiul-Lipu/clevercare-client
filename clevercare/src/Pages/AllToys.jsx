@@ -11,6 +11,7 @@ const AllToys = () => {
     const [loading, setLoading] = useState(false)
     // console.log(toys.length)
 
+    // sort options
     const option = [
         "Price high to low",
         "Price low to high"
@@ -20,14 +21,14 @@ const AllToys = () => {
 
 
     // useEffect(() => {
-    //     fetch(`https://server-side-rho-one.vercel.app/all_toy_data?limit=${dataLimit}`)
+    //     fetch(`http://localhost:5000/all_toy_data?limit=${dataLimit}`)
     //         .then(res => res.json())
     //         .then(data => setToys(data))
     // }, [dataLimit])
 
     useEffect(() => {
         fetch(
-            `https://server-side-rho-one.vercel.app/all_toy_data/${searchText}?&limit=${dataLimit}`
+            `http://localhost:5000/all_toy_data/${searchText}?&limit=${dataLimit}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -52,7 +53,7 @@ const AllToys = () => {
             try {
                 const value = seletedPrice.split(' ')[1]
                 // console.log(value);
-                const res = await fetch(`https://server-side-rho-one.vercel.app/all_toy_data?limit=${dataLimit}&value=${value}`)
+                const res = await fetch(`http://localhost:5000/all_toy_data?limit=${dataLimit}&value=${value}`)
                 const data = await res.json();
                 setToys(data)
             } finally {
@@ -90,6 +91,7 @@ const AllToys = () => {
                         </button>
                     </div>
 
+                    {/* sort by price */}
                     <div className="">
                         <label htmlFor="inputState" className="form-label">
                             Sort by Price

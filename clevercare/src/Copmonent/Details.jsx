@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 
 const Details = () => {
     const { id } = useParams();
     const [details, setDetails] = useState({});
+    useTitle('Toy Details')
 
     useEffect(() => {
         fetch(`https://server-side-rho-one.vercel.app/toy/${id}`)
