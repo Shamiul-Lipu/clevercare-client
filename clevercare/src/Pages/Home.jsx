@@ -6,23 +6,23 @@ import Gallery from "../Copmonent/Gallery";
 import useTitle from "../Hooks/useTitle";
 
 const Home = () => {
-    useTitle('Home');
-    return (
-        <>
-            <Banner></Banner>
-            <section>
-                <Gallery></Gallery>
-            </section>
-            <section>
-                <CategoryTab></CategoryTab>
-            </section>
-            <section>
-                {/* Extra seteion */}
-                <Courses></Courses>
-                <Engage></Engage>
-            </section>
-        </>
-    );
+  useTitle("Home");
+  return (
+    <>
+      <Banner></Banner>
+      <section>
+        <Gallery></Gallery>
+      </section>
+      <section>
+        <CategoryTab></CategoryTab>
+      </section>
+      <section>
+        {/* Extra seteion */}
+        <Courses></Courses>
+        <Engage></Engage>
+      </section>
+    </>
+  );
 };
 
 export default Home;
