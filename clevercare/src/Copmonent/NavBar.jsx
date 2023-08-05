@@ -4,6 +4,7 @@ import { HiUserCircle } from "react-icons/hi2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FiAlignLeft, FiX } from "react-icons/fi";
+import Container from "./Container/Container";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -115,72 +116,77 @@ const NavBar = () => {
 
   // mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8
   return (
-    <div className="my-5 bg-indigo-50 rounded-md">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo Section */}
-          <Link to="/" className="flex items-center">
-            <img className="h-12 w-12 text-blue-500" src={Logo} alt="" />
-            <span className="ml-2 text-xl font-bold tracking-wide bg-gradient-to-r from-indigo-900 via-emerald-900 to-purple-900 text-transparent bg-clip-text">
-              Clever<span className="text-blue-900">Care</span>
-            </span>
-          </Link>
+    <Container>
+      <div className="my-5 bg-indigo-50 rounded-md">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo Section */}
+            <Link to="/" className="flex items-center">
+              <img className="h-12 w-12 text-blue-500" src={Logo} alt="" />
+              <span className="ml-2 text-xl font-bold tracking-wide bg-gradient-to-r from-indigo-900 via-emerald-900 to-purple-900 text-transparent bg-clip-text">
+                Clever<span className="text-blue-900">Care</span>
+              </span>
+            </Link>
 
-          {/* Nav Items Section */}
-          <div className="hidden lg:flex">{navItem}</div>
+            {/* Nav Items Section */}
+            <div className="hidden lg:flex">{navItem}</div>
 
-          <div className="flex gap-5">
-            {/* User display section */}
-            {user && (
-              <label tabIndex={0} className={`btn btn-ghost btn-circle avatar`}>
-                <div className={` w-40  rounded-full`}>
-                  {user &&
-                    (user?.photoURL ? (
-                      <img src={user?.photoURL} />
-                    ) : (
-                      <HiUserCircle className="w-full h-full" />
-                    ))}
-                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
+            <div className="flex gap-5">
+              {/* User display section */}
+              {user && (
+                <label
+                  tabIndex={0}
+                  className={`btn btn-ghost btn-circle avatar`}
+                >
+                  <div className={` w-40  rounded-full`}>
                     {user &&
-                      (user?.displayName ? (
-                        <span className="bg-gray-900 text-white py-1 px-2 rounded">
-                          {user.displayName}
-                        </span>
+                      (user?.photoURL ? (
+                        <img src={user?.photoURL} />
                       ) : (
-                        <span className="bg-gray-900 text-white py-1 px-2 rounded">
-                          Name not found
-                        </span>
+                        <HiUserCircle className="w-full h-full" />
                       ))}
+                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
+                      {user &&
+                        (user?.displayName ? (
+                          <span className="bg-gray-900 text-white py-1 px-2 rounded">
+                            {user.displayName}
+                          </span>
+                        ) : (
+                          <span className="bg-gray-900 text-white py-1 px-2 rounded">
+                            Name not found
+                          </span>
+                        ))}
+                    </div>
                   </div>
-                </div>
-              </label>
-            )}
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="btn btn-outline"
-              >
-                {isMenuOpen ? (
-                  <FiX className="w-7 h-7" />
-                ) : (
-                  <FiAlignLeft className="w-7 h-7" />
-                )}
-              </button>
+                </label>
+              )}
+              {/* Mobile Menu Button */}
+              <div className="lg:hidden">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="btn btn-outline"
+                >
+                  {isMenuOpen ? (
+                    <FiX className="w-7 h-7" />
+                  ) : (
+                    <FiAlignLeft className="w-7 h-7" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`lg:hidden transition-transform duration-1000 ease-in-out  ${
-            isMenuOpen ? "translate-y-0" : "-translate-y-1/3"
-          }`}
-        >
-          {isMenuOpen && <>{navItem}</>}
+          {/* Mobile Menu */}
+          <div
+            className={`lg:hidden transition-transform duration-1000 ease-in-out  ${
+              isMenuOpen ? "translate-y-0" : "-translate-y-1/3"
+            }`}
+          >
+            {isMenuOpen && <>{navItem}</>}
+          </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -6,7 +6,7 @@ const CategoryTab = () => {
   const toyCategories = [
     "Mathematics",
     "Science and Discovery Kits",
-    "Language and Literacy Kits",
+    "Engineering and Building Kits",
     "Language and Literacy Kits",
     "Arts and Crafts Kits",
   ];
